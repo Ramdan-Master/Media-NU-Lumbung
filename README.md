@@ -60,3 +60,14 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # Media-NU-Lumbung
+Untuk deploy di server baru:
+
+Clone repository: git clone https://github.com/Ramdan-Master/Media-NU-Lumbung.git
+Install dependencies: composer install && npm install
+Setup environment: copy .env.example ke .env dan konfigurasi database
+Generate key: php artisan key:generate
+Jalankan migration: php artisan migrate
+Jalankan seeder: php artisan db:seed
+Build assets: npm run build
+Setup storage link: php artisan storage:link
+Proyek Media Organisasi lengkap dengan semua fitur dan integrasi Google AdSense telah berhasil diupload ke GitHub private Anda! 🚀
