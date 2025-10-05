@@ -1,0 +1,1 @@
+- [x] Modify trending news section in home.blade.php to display placeholder image when featured_image is null
