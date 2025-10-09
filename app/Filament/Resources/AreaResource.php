@@ -4,28 +4,30 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\AreaResource\Pages;
 use App\Models\Area;
+use BackedEnum;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use UnitEnum;
 
 class AreaResource extends Resource
 {
     protected static ?string $model = Area::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-map-pin';
+    protected static BackedEnum|string|null $navigationIcon = 'heroicon-o-map-pin';
 
     protected static ?string $navigationLabel = 'Daerah';
 
-    protected static ?string $navigationGroup = 'Konten';
+    protected static UnitEnum|string|null $navigationGroup = 'Konten';
 
     protected static ?int $navigationSort = 3;
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
                 Forms\Components\Section::make('Informasi Daerah')
                     ->schema([
