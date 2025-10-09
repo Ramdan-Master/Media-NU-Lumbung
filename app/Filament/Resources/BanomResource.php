@@ -4,28 +4,30 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BanomResource\Pages;
 use App\Models\Banom;
+use BackedEnum;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Support\Str;
+use UnitEnum;
 
 class BanomResource extends Resource
 {
     protected static ?string $model = Banom::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-building-office';
-    
+    protected static BackedEnum|string|null $navigationIcon = 'heroicon-o-building-office';
+
     protected static ?string $navigationLabel = 'Badan Otonom';
-    
-    protected static ?string $navigationGroup = 'Organisasi';
+
+    protected static UnitEnum|string|null $navigationGroup = 'Organisasi';
     
     protected static ?int $navigationSort = 1;
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
                 Forms\Components\Section::make('Informasi Banom')
                     ->schema([
